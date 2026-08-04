@@ -1,0 +1,27 @@
+#print the hello world program
+print("hello")
+#print the sum of two numbers
+a = 10
+b = 20
+sum = a + b
+print(sum)
+
+#printing the user given string
+name = input("Enter your name: ")
+print("Hello,", name)
+
+#another method for  sum of two numbers
+a = 10
+b = 20
+print("sum of two numbers:",+sum)
+
+#mystring and integer
+name = "Dinesh"
+age = 19
+
+print(name)
+print(age)
+#type of data
+print(type(a))
+print(type(name))
+print(type(age))
