@@ -87,3 +87,108 @@ def even(num):
     else:
         print("Odd")
 even(8)
+
+#Percentage Decorator
+def result(func):
+    def wrapper(mark):
+        print("Student Result")
+        func(mark)
+    return wrapper
+
+@result
+def grade(mark):
+    if mark >= 35:
+        print("Pass")
+    else:
+        print("Fail")
+
+grade(80)
+
+#. Count Function Calls 
+def count_calls(func):
+    count = 0
+    def wrapper():
+        nonlocal count
+        count += 1
+        print("Function called", count, "times")
+        func()
+    return wrapper
+@count_calls
+def hello():
+    print("Hello Python")
+hello()
+hello()
+hello()
+
+#Retry on Failure
+def retry(func):
+    def wrapper():
+        for i in range(3):
+            try:
+                return func()
+            except:
+                print("Retry", i + 1)
+        print("Failed after 3 attempts")
+    return wrapper
+@retry
+def divide():
+    a = int(input("Enter Number: "))
+    b = int(input("Enter Number: "))
+    print(a / b)
+divide()
+
+#Login Authentication
+def login(func):
+    def wrapper():
+        username = input("Username: ")
+        password = input("Password: ")
+        if username == "admin" and password == "python":
+            func()
+        else:
+            print("Access Denied")
+    return wrapper
+@login
+def dashboard():
+    print("Welcome Admin")
+dashboard()
+
+#Accept Any Number of Arguments
+def logger(func):
+    def wrapper(*args):
+        print("Arguments:", args)
+        result = func(*args)
+        print("Result:", result)
+        return result
+    return wrapper
+@logger
+def add(a, b, c):
+    return a + b + c
+add(10, 20, 30)
+
+#Multiple Decorators
+def upper(func):
+    def wrapper():
+        return func().upper()
+    return wrapper
+def star(func):
+    def wrapper():
+        return "***** " + func() + " *****"
+    return wrapper
+@star
+@upper
+def text():
+    return "python decorators"
+print(text())
+
+#Exception Handling Decorator
+def safe(func):
+    def wrapper(a, b):
+        try:
+            return func(a, b)
+        except Exception as e:
+            print("Error:", e)
+    return wrapper
+@safe
+def divide(a, b):
+    return a / b
+print(divide(10, 0))
