@@ -116,3 +116,83 @@ def fibonacci(n):
 terms = int(input("Enter terms: "))
 for i in range(terms):
     print(fibonacci(i), end=" ")
+
+#Lambda with Sorting
+students = [("Ram", 90), ("Ravi", 75), ("Asha", 95)]
+students.sort(key=lambda x: x[1])
+print(students)
+
+#Map Function
+numbers = [1, 2, 3, 4, 5]
+square = list(map(lambda x: x*x, numbers))
+print(square)
+
+#Nested Function
+def outer():
+    print("Outer Function")
+    def inner():
+        print("Inner Function")
+    inner()
+outer()
+
+#Calculator using Functions
+def add(a, b):
+    return a + b
+def sub(a, b):
+    return a - b
+def mul(a, b):
+    return a * b
+def div(a, b):
+    return a / b
+choice = input("Choose (+,-,*,/): ")
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+if choice == "+":
+    print(add(a, b))
+elif choice == "-":
+    print(sub(a, b))
+elif choice == "*":
+    print(mul(a, b))
+elif choice == "/":
+    print(div(a, b))
+
+#Decorator Function (Advanced)
+def welcome(func):
+    def message():
+        print("Welcome")
+        func()
+        print("Thank You")
+    return message
+@welcome
+def display():
+    print("Learning Python Functions")
+display()
+#. Palindrome Function
+def palindrome(text):
+    return text == text[::-1]
+word = input("Enter a word: ")
+if palindrome(word):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+
+#Armstrong Number Function
+def armstrong(num):
+    power = len(str(num))
+    total = sum(int(d)**power for d in str(num))
+    return total == num
+n = int(input("Enter number: "))
+if armstrong(n):
+    print("Armstrong Number")
+else:
+    print("Not Armstrong")
+
+#Count Vowels using Function
+def vowels(text):
+    count = 0
+    for ch in text.lower():
+        if ch in "aeiou":
+            count += 1
+    return count
+name = input("Enter text: ")
+print("Vowels =", vowels(name))
