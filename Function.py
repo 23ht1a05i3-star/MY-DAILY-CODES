@@ -196,3 +196,36 @@ def vowels(text):
     return count
 name = input("Enter text: ")
 print("Vowels =", vowels(name))
+
+#Student Grade Function
+def grade(mark):
+    if mark >= 90:
+        return "A"
+    elif mark >= 75:
+        return "B"
+    elif mark >= 50:
+        return "C"
+    else:
+        return "Fail"
+marks = int(input("Enter Marks: "))
+print("Grade:", grade(marks))
+
+#Count Vowels using Function
+def vowels(text):
+    count = 0
+    for ch in text.lower():
+        if ch in "aeiou":
+            count += 1
+
+    return count
+name = input("Enter text: ")
+print("Vowels =", vowels(name))
+
+#Password Validation Function
+def check(password):
+    if len(password) >= 8:
+        print("Strong Password")
+    else:
+        print("Weak Password")
+pwd = input("Enter Password: ")
+check(pwd)
