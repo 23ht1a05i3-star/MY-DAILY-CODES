@@ -35,3 +35,33 @@ text = "Programming"
 print(text[0:6])
 print(text[3:])
 print(text[::-1])
+
+#Add Two Numbers using parameters
+def add(a, b):
+    print("Sum =", a + b)
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+add(5,6)
+#Subtract Two Numbers using parameters
+def subtract(a, b):
+    print("Difference =", a - b)
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+subtract(4, 5)
+
+#Multiply Two Numbers using parameters
+def multiply(a, b):
+    print("Product =", a * b)
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+multiply(3,4)
+
+#Divide Two Numbers using parameters
+def divide(a, b):
+    if b != 0:
+        print("Quotient =", a / b)
+    else:
+        print("Cannot divide by zero")
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+divide(3,8)
