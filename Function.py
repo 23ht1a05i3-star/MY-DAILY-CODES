@@ -41,20 +41,20 @@ def add(a, b):
     print("Sum =", a + b)
 a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
-add(5,6)
+add(a,b)
 #Subtract Two Numbers using parameters
 def subtract(a, b):
     print("Difference =", a - b)
 a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
-subtract(4, 5)
+subtract(a,b)
 
 #Multiply Two Numbers using parameters
 def multiply(a, b):
     print("Product =", a * b)
 a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
-multiply(3,4)
+multiply(a,b)
 
 #Divide Two Numbers using parameters
 def divide(a, b):
@@ -64,4 +64,55 @@ def divide(a, b):
         print("Cannot divide by zero")
 a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
-divide(3,8)
+divide(a,b)
+
+#Check Even or Odd using function
+def check(num):
+    if num % 2 == 0:
+        print("Even Number")
+    else:
+        print("Odd Number")
+num = int(input("Enter a number: "))
+check(num)
+
+#Find Largest Numberusing functions
+def largest(a, b):
+    if a > b:
+        print(a, "is Largest")
+    else:
+        print(b, "is Largest")
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+largest(a, b)
+
+#Prime Number using Function
+def prime(num):
+    if num < 2:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+n = int(input("Enter a number: "))
+
+if prime(n):
+    print("Prime Number")
+else:
+    print("Not a Prime Number")
+
+#Recursive Factorial
+def factorial(n):
+    if n == 1 or n == 0:
+        return 1
+    return n * factorial(n - 1)
+num = int(input("Enter number: "))
+print("Factorial =", factorial(num))
+
+#Recursive Fibonacci
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+terms = int(input("Enter terms: "))
+for i in range(terms):
+    print(fibonacci(i), end=" ")
