@@ -113,229 +113,42 @@ else:
 # Combined Practice Program
 # ===========================================
 
-print("========== AND OPERATOR ==========")
+print("=== AND ===")
 
-# 1. Voting Eligibility
-age = int(input("Enter your age: "))
-has_id = input("Do you have an ID? (yes/no): ")
+age = int(input("Age: "))
+id = input("ID (yes/no): ")
 
-if age >= 18 and has_id == "yes":
-    print(" You are allowed to vote.")
+if age >= 18 and id == "yes":
+    print("Eligible to Vote")
 else:
-    print(" You are not allowed to vote.")
+    print("Not Eligible")
 
-print("----------------------------------")
+print("\n=== OR ===")
 
-# 2. ATM Withdrawal
-balance = int(input("Enter your account balance: "))
-pin = input("Enter your ATM PIN: ")
+amount = int(input("Order Amount: "))
+member = input("Premium Member (yes/no): ")
 
-if balance >= 1000 and pin == "1234":
-    print(" Withdrawal Successful")
+if amount >= 500 or member == "yes":
+    print("Free Delivery")
 else:
-    print(" Transaction Failed")
+    print("Delivery Charges")
 
-print("----------------------------------")
+print("\n=== NOT ===")
 
-# 3. Login System
-username = input("Enter Username: ")
-password = input("Enter Password: ")
-
-if username == "admin" and password == "python123":
-    print(" Login Successful")
-else:
-    print(" Invalid Username or Password")
-
-print("----------------------------------")
-
-# 4. Driving License
-age = int(input("Enter your age: "))
-test = input("Did you pass the driving test? (yes/no): ")
-
-if age >= 18 and test == "yes":
-    print(" License Approved")
-else:
-    print(" License Rejected")
-
-print("----------------------------------")
-
-# 5. Scholarship
-marks = int(input("Enter your marks: "))
-attendance = int(input("Enter attendance percentage: "))
-
-if marks >= 75 and attendance >= 80:
-    print(" Scholarship Approved")
-else:
-    print(" Scholarship Not Approved")
-
-
-
-print("\n========== OR OPERATOR ==========")
-
-# 6. Holiday
-day = input("Enter the day: ")
-
-if day == "Saturday" or day == "Sunday":
-    print(" It's a Holiday")
-else:
-    print(" It's a Working Day")
-
-print("----------------------------------")
-
-# 7. Free Delivery
-amount = float(input("Enter order amount: "))
-premium = input("Are you a Premium Member? (yes/no): ")
-
-if amount >= 500 or premium == "yes":
-    print(" Free Delivery")
-else:
-    print(" Delivery Charges Apply")
-
-print("----------------------------------")
-
-# 8. Restaurant Discount
-bill = float(input("Enter bill amount: "))
-member = input("Are you a Member? (yes/no): ")
-
-if bill >= 1000 or member == "yes":
-    print(" Discount Applied")
-else:
-    print(" No Discount")
-
-print("----------------------------------")
-
-# 9. Library Access
-student = input("Are you a Student? (yes/no): ")
-teacher = input("Are you a Teacher? (yes/no): ")
-
-if student == "yes" or teacher == "yes":
-    print(" Library Access Granted")
-else:
-    print(" Access Denied")
-
-print("----------------------------------")
-
-# 10. School Holiday
-festival = input("Is today a Festival? (yes/no): ")
-sunday = input("Is today Sunday? (yes/no): ")
-
-if festival == "yes" or sunday == "yes":
-    print(" School Holiday")
-else:
-    print(" School Open")
-
-
-
-print("\n========== NOT OPERATOR ==========")
-
-# 11. Rain Check
-is_raining = False
-
-if not is_raining:
-    print(" You can go outside.")
-else:
-    print(" Take an umbrella.")
-
-print("----------------------------------")
-
-# 12. Phone Charging
-charging = input("Is the phone charging? (yes/no): ")
+charging = input("Phone Charging (yes/no): ")
 
 if not (charging == "yes"):
-    print(" Please connect your charger.")
+    print("Connect Charger")
 else:
-    print(" Phone is charging.")
+    print("Charging")
 
-print("----------------------------------")
+print("\n=== COMBINED ===")
 
-# 13. Door Lock
-door_locked = False
+marks = int(input("Marks: "))
+sports = input("Sports Certificate (yes/no): ")
+fees = input("Fees Paid (yes/no): ")
 
-if not door_locked:
-    print(" Please lock the door.")
+if (marks >= 75 or sports == "yes") and fees == "yes":
+    print("Admission Confirmed")
 else:
-    print(" Door is secure.")
-
-print("----------------------------------")
-
-# 14. Wi-Fi Connection
-connected = input("Is Wi-Fi connected? (yes/no): ")
-
-if not (connected == "yes"):
-    print(" Connect to Wi-Fi.")
-else:
-    print(" Internet is available.")
-
-print("----------------------------------")
-
-# 15. Battery Status
-battery_full = input("Is battery full? (yes/no): ")
-
-if not (battery_full == "yes"):
-    print(" Keep Charging.")
-else:
-    print(" Charging Complete.")
-
-
-
-print("\n========== COMBINED (AND + OR + NOT) ==========")
-
-# 16. College Admission
-marks = int(input("Enter Marks: "))
-sports = input("Sports Certificate? (yes/no): ")
-fees = input("Fees Paid? (yes/no): ")
-
-if (marks >= 75 or sports == "yes") and not (fees == "no"):
-    print(" Admission Confirmed")
-else:
-    print(" Admission Pending")
-
-print("----------------------------------")
-
-# 17. Office Entry
-id_card = input("Do you have ID Card? (yes/no): ")
-fingerprint = input("Fingerprint Verified? (yes/no): ")
-blacklisted = input("Are you Blacklisted? (yes/no): ")
-
-if id_card == "yes" and fingerprint == "yes" and not (blacklisted == "yes"):
-    print(" Office Entry Allowed")
-else:
-    print(" Office Entry Denied")
-
-print("----------------------------------")
-
-# 18. Online Shopping Offer
-amount = float(input("Enter Shopping Amount: "))
-coupon = input("Do you have Coupon? (yes/no): ")
-premium = input("Premium Member? (yes/no): ")
-
-if (amount >= 1000 and coupon == "yes") or premium == "yes":
-    print(" Offer Applied")
-else:
-    print(" No Offer")
-
-print("----------------------------------")
-
-# 19. Flight Boarding
-ticket = input("Do you have Ticket? (yes/no): ")
-passport = input("Do you have Passport? (yes/no): ")
-banned = input("Are you Banned? (yes/no): ")
-
-if ticket == "yes" and passport == "yes" and not (banned == "yes"):
-    print(" Boarding Allowed")
-else:
-    print(" Boarding Denied")
-
-print("----------------------------------")
-
-# 20. Smart Home Security
-door = input("Is the door closed? (yes/no): ")
-window = input("Are the windows closed? (yes/no): ")
-fire = input("Is there a fire? (yes/no): ")
-
-if door == "yes" and window == "yes" and not (fire == "yes"):
-    print(" Home is Safe")
-else:
-    print(" Security Alert!")
-
-print("\n========== PROGRAM COMPLETED ==========")
+    print("Admission Pending")
