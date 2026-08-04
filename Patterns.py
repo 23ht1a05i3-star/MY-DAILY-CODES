@@ -54,3 +54,24 @@ for i in range(rows, 0, -1):
     for k in range(i):
         print("*", end=" ")
     print()
+
+#Number Triangle
+rows = 5
+for i in range(1, rows + 1):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
+
+#Same Number Pattern print the rows
+rows = 5
+for i in range(1, rows + 1):
+    for j in range(i):
+        print(i, end=" ")
+    print()
+
+#Alpabatic triangle
+rows = 5
+for i in range(rows):
+    for j in range(i + 1):
+        print(chr(65 + j), end=" ")
+    print()
