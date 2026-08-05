@@ -192,3 +192,14 @@ def safe(func):
 def divide(a, b):
     return a / b
 print(divide(10, 0))
+
+#. Password Validation
+def password():
+    pwd = input("Enter Password: ")
+
+    if len(pwd) >= 8 and any(ch.isdigit() for ch in pwd):
+        print("Strong Password")
+    else:
+        print("Weak Password")
+
+password()
