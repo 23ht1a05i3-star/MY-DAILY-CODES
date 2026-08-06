@@ -114,3 +114,67 @@ text = input("Enter Sentence: ")
 words = text.split()
 for word in words:
     print(word[0].upper() + word[1:].lower(), end=" ")
+
+#Remove Consecutive Duplicate Characters
+text = input("Enter String: ")
+
+result = text[0]
+
+for i in range(1, len(text)):
+    if text[i] != text[i-1]:
+        result += text[i]
+
+print(result)
+
+#Find the Second Most Frequent Character
+text = input("Enter String: ")
+freq = {}
+for ch in text:
+    freq[ch] = freq.get(ch, 0) + 1
+sorted_freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+print("Second Most Frequent:", sorted_freq[1][0])
+
+#Longest Word Without Using max()
+text = input("Enter Sentence: ")
+words = text.split()
+longest = words[0]
+for word in words:
+    if len(word) > len(longest):
+        longest = word
+print("Longest Word:", longest)
+
+#Check if One String is a Subsequence of Another
+s1 = input("Small String: ")
+s2 = input("Large String: ")
+i = 0
+for ch in s2:
+    if i < len(s1) and ch == s1[i]:
+        i += 1
+if i == len(s1):
+    print("Yes")
+else:
+    print("No")
+
+#Find the First Repeated Character
+text = input("Enter String: ")
+seen = set()
+for ch in text:
+    if ch in seen:
+        print("First Repeated Character:", ch)
+        break
+    seen.add(ch)
+
+#Check Whether Two Strings Differ by Exactly One Character
+a = input("First String: ")
+b = input("Second String: ")
+count = 0
+if len(a) == len(b):
+    for i in range(len(a)):
+        if a[i] != b[i]:
+            count += 1
+    if count == 1:
+        print("Yes")
+    else:
+        print("No")
+else:
+    print("Length Mismatch")
