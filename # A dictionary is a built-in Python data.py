@@ -131,9 +131,7 @@ voters = {
     "Rahul": 21,
     "Anil": 16
 }
-
 name = input("Enter Name: ")
-
 if name in voters:
     if voters[name] >= 18:
         print("Eligible to Vote")
@@ -144,12 +142,9 @@ else:
 
 #Student Marks System
 students = {}
-
 name = input("Enter Student Name: ")
 marks = int(input("Enter Marks: "))
-
 students[name] = marks
-
 print("\nStudent Records")
 print(students)
 
@@ -159,9 +154,7 @@ employees = {
     "Anil": 42000,
     "Kiran": 50000
 }
-
 name = input("Enter Employee Name: ")
-
 if name in employees:
     print("Salary =", employees[name])
 else:
@@ -174,9 +167,7 @@ products = {
     "Keyboard": 1200,
     "Monitor": 10000
 }
-
 product = input("Enter Product Name: ")
-
 if product in products:
     print("Price =", products[product])
 else:
@@ -187,10 +178,8 @@ contacts = {
     "Rahul": "9876543210",
     "Anil": "9988776655",
     "Kiran": "9123456789"
-}
-
+} 
 name = input("Enter Contact Name: ")
-
 if name in contacts:
     print("Phone Number:", contacts[name])
 else:
@@ -203,9 +192,7 @@ library = {
     "C++": "Available",
     "SQL": "Available"
 }
-
 book = input("Enter Book Name: ")
-
 if book in library:
     print("Status:", library[book])
 else:
