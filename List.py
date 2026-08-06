@@ -101,3 +101,93 @@ print("Orange" not in fruits)
 # Stores Multiple Values
 # Maintains Order
 # Dynamic in Size
+
+#Second Largest Number
+numbers = [12, 45, 78, 23, 90, 67]
+numbers.sort()
+print("Second Largest =", numbers[-2])
+
+#Second Smallest Number
+numbers = [12, 45, 78, 23, 90, 67]
+numbers.sort()
+print("Second Smallest =", numbers[1])
+
+#Find Duplicate Elements
+numbers = [10,20,30,10,40,20,50]
+duplicate = []
+for i in numbers:
+    if numbers.count(i) > 1 and i not in duplicate:
+        duplicate.append(i)
+print("Duplicates:", duplicate)
+
+#Find Missing Number
+numbers = [1,2,3,5,6]
+
+for i in range(1,7):
+    if i not in numbers:
+        print("Missing Number:", i)
+
+#Separate Even and Odd Numbers
+numbers = [10,11,12,13,14,15,16]
+even = []
+odd = []
+for i in numbers:
+    if i % 2 == 0:
+        even.append(i)
+    else:
+        odd.append(i)
+print("Even:", even)
+print("Odd:", odd)
+
+#Rotate List Left
+numbers = [1,2,3,4,5]
+n = 2
+result = numbers[n:] + numbers[:n]
+print(result)
+
+#Common Elements
+list1 = [10,20,30,40]
+list2 = [20,40,60]
+common = []
+for i in list1:
+    if i in list2:
+        common.append(i)
+print(common)
+
+#Employee Salary Analysis
+salary = []
+for i in range(5):
+    s = int(input("Enter Salary: "))
+    salary.append(s)
+print("Highest =", max(salary))
+print("Lowest =", min(salary))
+print("Average =", sum(salary)/len(salary))
+
+#Count Positive and Negative Numbers
+numbers = [5,-2,7,-8,10,-1]
+positive = 0
+negative = 0
+for i in numbers:
+    if i > 0:
+        positive += 1
+    else:
+        negative += 1
+print("Positive =", positive)
+print("Negative =", negative)
+
+#Find Common Elements
+list1 = [1,2,3,4]
+list2 = [3,4,5,6]
+for i in list1:
+    if i in list2:
+        print(i)
+
+#Matrix Multiplication
+a = [[1,2],[3,4]]
+b = [[5,6],[7,8]]
+result = [[0,0],[0,0]]
+for i in range(2):
+    for j in range(2):
+        for k in range(2):
+            result[i][j] += a[i][k] * b[k][j]
+print(result)
