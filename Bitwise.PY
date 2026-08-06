@@ -93,7 +93,6 @@ print("Number of set bits:", count)
 
 #Toggle the 4th bit of a number.
 num = int(input("Enter a number: "))
-
 position = 4      
 result = num ^ (1 << position)
 print("Original Number :", num)
