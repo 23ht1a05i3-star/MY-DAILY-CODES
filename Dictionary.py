@@ -141,3 +141,40 @@ if name in voters:
         print("Not Eligible")
 else:
     print("Person Not Found")
+
+#Student Marks System
+students = {}
+name = input("Enter Student Name: ")
+marks = int(input("Enter Marks: "))
+students[name] = marks
+print("\nStudent Records")
+print(students)
+
+#Employee Salary Lookup
+employees = {
+    "Rahul": 35000,
+    "Anil": 42000,
+    "Kiran": 50000
+}
+
+name = input("Enter Employee Name: ")
+
+if name in employees:
+    print("Salary =", employees[name])
+else:
+    print("Employee Not Found")
+
+#Product Price Lookup
+products = {
+    "Laptop": 55000,
+    "Mouse": 500,
+    "Keyboard": 1200,
+    "Monitor": 10000
+}
+
+product = input("Enter Product Name: ")
+
+if product in products:
+    print("Price =", products[product])
+else:
+    print("Product Not Available")
