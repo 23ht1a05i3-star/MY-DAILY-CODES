@@ -75,3 +75,26 @@ print("XOR :", a ^ b)
 print("NOT of a :", ~a)
 print("Left Shift :", a << 1)
 print("Right Shift:", a >> 1)
+
+#Find Whether a Number is Even or Odd Using Bitwise Operator
+num = int(input("Enter a number: "))
+if num & 1:
+    print(num, "is Odd")
+else:
+    print(num, "is Even")
+
+#Count the number of set bits in an integer.
+num = int(input("Enter a number: "))
+count = 0
+while num > 0:
+    count += num & 1
+    num = num >> 1
+print("Number of set bits:", count)
+
+#Toggle the 4th bit of a number.
+num = int(input("Enter a number: "))
+
+position = 4      
+result = num ^ (1 << position)
+print("Original Number :", num)
+print("Modified Number :", result)
