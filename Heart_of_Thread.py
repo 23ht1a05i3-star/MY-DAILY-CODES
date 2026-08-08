@@ -221,3 +221,27 @@ count = 1
 outer  release the lock
 count = 2
 '''
+
+
+#Real world teacher problem and time 
+import threading
+import time
+
+def student(name):
+    print(name,"started exam")
+    time.sleep(3)
+    print(name,"Submitted paper")
+
+t1 = threading.Thread(target=student,
+                      args=("Ranjith",),
+                      name="Student-1"
+)
+t2 = threading.Thread(target=student,
+                      args=("Anand",),
+                      name="student-2"
+)
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print("Teacher collected all papers")
