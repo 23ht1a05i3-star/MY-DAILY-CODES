@@ -60,3 +60,73 @@ for t in threads:
     t.join()
 
 print(count)
+'''
+998
+994
+998
+'''
+'''
+critical section:
+code section where shared resources are
+accessed is called critical section
+count +=1 --->critical section
+
+To avoid the race condition?
+one thread should enter critical section
+
+solution: Lock
+
+what is a lock?
+synchronization Mechanism
+that allows only one thread to execute
+a critical section at a time.
+
+Thread A acquries Lock
+other Threads will wait
+Thread A releases lock
+next thread gets lock
+
+import threading
+lock = threading.Lock()
+
+#to apply lock
+lock.acquire()
+
+#to release
+lock.release()
+
+'''
+import threading
+count = 0
+lock = threading.Lock()
+
+def increment():
+    global count
+    for i in range(10000):
+        with lock:
+        #critical section
+            count +=1
+        
+t1 = threading.Thread(target=increment)
+t2 = threading.Thread(target=increment)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print(count)
+
+#Bank example:
+class Bank:
+    def __init__(self):
+        self.balance = 1000
+
+    def withdraw(self,amount):
+        if self.balance >= amount:
+            self.balance -= amount
+
+#T1 = 500
+#T2 = 700          #negative
+
