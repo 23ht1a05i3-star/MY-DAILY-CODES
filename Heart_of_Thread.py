@@ -195,3 +195,29 @@ if same lock acquire again dead lock
 #     print("inner")
 #     lock.release()
 # outer()
+'''
+outre() acquire the lock
+inner() trying to acquire the same lock
+lock is already head above
+wait forever
+'''
+lock=threading.RLock()
+def inner():
+    with lock:
+        print("inner")
+def outer(): 
+    with lock:
+        print("outer")
+        inner()
+outer()
+'''
+outer acquire
+count = 1
+
+inner acquire
+count=2
+inner releases the lock
+count = 1
+outer  release the lock
+count = 2
+'''
