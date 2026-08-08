@@ -40,3 +40,59 @@ outputs
 
 
 '''
+count = 0
+count +=1
+print(count)
+
+#Write with threads
+import threading
+count = 0                                       #count = variable
+def increment():
+    global count
+    count +=1
+    
+threads = []
+for i in range(1000):
+    t = threading.Thread(target=increment)
+    threads.append(t)
+    t.start()
+for t in threads:
+    t.join()
+
+print(count)
+'''
+998
+994
+998
+'''
+'''
+critical section:
+code section where shared resources are
+accessed is called critical section
+count +=1 --->critical section
+
+To avoid the race condition?
+one thread should enter critical section
+
+solution: Lock
+
+what is a lock?
+synchronization Mechanism
+that allows only one thread to execute
+a critical section at a time.
+
+Thread A acquries Lock
+other Threads will wait
+Thread A releases lock
+next thread gets lock
+
+import threading
+lock = threading.Lock()
+
+#to apply lock
+lock.acquire()
+
+#to release
+lock.release()
+
+'''
