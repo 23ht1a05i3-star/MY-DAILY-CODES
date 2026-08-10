@@ -66,4 +66,101 @@ if pin == "1234":
 else:
     print("Invalid PIN")
 
-#
+#Voting System
+age = int(input("Enter age: "))
+
+if age >= 18:
+    id_card = input("Do you have ID? yes/no: ")
+
+    if id_card == "yes":
+        print("You can vote")
+    else:
+        print("ID card required")
+else:
+    print("You are under 18")
+
+#Driving License
+age = int(input("Enter age: "))
+
+if age >= 18:
+    test = input("Did you pass the test? yes/no: ")
+
+    if test == "yes":
+        print("License Approved")
+    else:
+        print("Test not passed")
+else:
+    print("Not eligible due to age")
+
+#College Admission
+marks = int(input("Enter marks: "))
+
+if marks >= 75:
+    entrance = input("Passed entrance exam? yes/no: ")
+
+    if entrance == "yes":
+        print("Admission Approved")
+    else:
+        print("Entrance exam required")
+else:
+    print("Marks are not sufficient")
+
+#Scholarship System
+marks = int(input("Enter marks: "))
+
+if marks >= 80:
+    attendance = int(input("Enter attendance: "))
+
+    if attendance >= 85:
+        print("Scholarship Approved")
+    else:
+        print("Attendance too low")
+else:
+    print("Marks too low")
+
+#Bank Loan Eligibility
+salary = int(input("Enter salary: "))
+
+if salary >= 30000:
+    credit = int(input("Enter credit score: "))
+
+    if credit >= 700:
+        print("Loan Approved")
+    else:
+        print("Low Credit Score")
+else:
+    print("Salary not eligible")
+
+#Movie Ticket
+age = int(input("Enter age: "))
+
+if age >= 18:
+    member = input("Are you a member? yes/no: ")
+
+    if member == "yes":
+        print("Ticket Price: ₹150")
+    else:
+        print("Ticket Price: ₹200")
+else:
+    print("Ticket Price: ₹100")
+
+#ATM with Multiple Nested Conditions
+balance = 10000
+pin = input("Enter PIN: ")
+
+if pin == "1234":
+    amount = int(input("Enter amount: "))
+
+    if amount > 0:
+        if amount <= balance:
+            if amount % 100 == 0:
+                print("Withdrawal Successful")
+                print("Remaining:", balance - amount)
+            else:
+                print("Enter amount in multiples of 100")
+        else:
+            print("Insufficient Balance")
+    else:
+        print("Invalid Amount")
+else:
+    print("Wrong PIN")
