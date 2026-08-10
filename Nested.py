@@ -164,3 +164,80 @@ if pin == "1234":
         print("Invalid Amount")
 else:
     print("Wrong PIN")
+
+#Student Result System
+marks = int(input("Enter marks: "))
+
+if marks >= 40:
+    attendance = int(input("Enter attendance: "))
+
+    if attendance >= 75:
+        if marks >= 90:
+            print("Grade A")
+        elif marks >= 75:
+            print("Grade B")
+        else:
+            print("Grade C")
+    else:
+        print("Failed due to attendance")
+else:
+    print("Failed due to marks")
+
+#Employee Promotion
+salary = int(input("Enter salary: "))
+experience = int(input("Enter experience: "))
+
+if experience >= 5:
+    performance = input("Performance is good? yes/no: ")
+
+    if performance == "yes":
+        print("Promotion Approved")
+    else:
+        print("Improve Performance")
+else:
+    print("Not enough experience")
+
+#Smart Security System
+door = input("Is door closed? yes/no: ")
+
+if door == "yes":
+    alarm = input("Is alarm active? yes/no: ")
+
+    if alarm == "yes":
+        password = input("Enter security password: ")
+
+        if password == "9999":
+            print("System Secure")
+        else:
+            print("Security Alert!")
+    else:
+        print("Activate Alarm")
+else:
+    print("Close the Door")
+
+#Employee Promotion
+salary = int(input("Enter salary: "))
+experience = int(input("Enter experience: "))
+
+if experience >= 5:
+    performance = input("Performance is good? yes/no: ")
+
+    if performance == "yes":
+        print("Promotion Approved")
+    else:
+        print("Improve Performance")
+else:
+    print("Not enough experience")
+
+#working flow of this nested
+#Start
+#  ↓
+# Is age >= 18?
+#   ↓
+#  YES ───────── NO
+#   ↓             ↓
+# Has ID?      Not Allowed
+#   ↓
+# YES ───── NO
+#  ↓         ↓
+# Allowed   ID Required
