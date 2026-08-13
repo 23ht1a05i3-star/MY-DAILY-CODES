@@ -75,3 +75,66 @@ except ZeroDivisionError:
 
 finally:
     print("Program completed")
+
+
+
+#     try
+#  ↓
+# Error?
+#  ↙   ↘
+# YES   NO
+#  ↓     ↓
+# except else
+
+#finally
+#The finally block executes whether 
+# an exception occurs or not
+try:
+    num = int(input("Enter number: "))
+    print(10 / num)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("Program completed")
+#Complete Exception Handling Structure
+# try:
+#     # risky code
+
+# except ValueError:
+#     # handle ValueError
+
+# except ZeroDivisionError:
+#     # handle ZeroDivisionError
+
+# else:
+#     # executes if no error
+
+# finally:
+#     # always executes
+
+#Calculator with Exception Handling
+try:
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    op = input("Enter operator: ")
+
+    if op == "+":
+        print(a + b)
+
+    elif op == "-":
+        print(a - b)
+
+    elif op == "*":
+        print(a * b)
+
+    elif op == "/":
+        print(a / b)
+
+    else:
+        print("Invalid operator")
+
+except ValueError:
+    print("Enter numbers only")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
