@@ -138,3 +138,76 @@ except ValueError:
 
 except ZeroDivisionError:
     print("Cannot divide by zero")
+
+#Student Marks
+try:
+    marks = int(input("Enter marks: "))
+    if marks < 0 or marks > 100:
+        print("Invalid marks")
+    elif marks >= 40:
+        print("Pass")
+    else:
+        print("Fail")
+except ValueError:
+    print("Enter numbers only")
+
+#Age Validation
+try:
+    age = int(input("Enter age: "))
+
+    if age < 0:
+        print("Invalid age")
+
+    elif age >= 18:
+        print("Eligible")
+
+    else:
+        print("Not Eligible")
+
+except ValueError:
+    print("Enter a valid age")
+
+#Login System
+try:
+    username = input("Username: ")
+    password = input("Password: ")
+
+    if username == "admin" and password == "1234":
+        print("Login Successful")
+    else:
+        print("Invalid Login")
+
+except Exception as e:
+    print("Error:", e)
+
+#File Handling + Exception Handling
+try:
+    file = open("data.txt", "r")
+    print(file.read())
+    file.close()
+except FileNotFoundError:
+    print("File does not exist")
+
+#Bank Account Example
+class InsufficientBalance(Exception):
+    pass
+
+
+balance = 5000
+
+try:
+    amount = int(input("Enter amount: "))
+
+    if amount > balance:
+        raise InsufficientBalance("Not enough balance")
+
+    balance -= amount
+
+    print("Withdrawal Successful")
+    print("Balance:", balance)
+
+except InsufficientBalance as e:
+    print(e)
+
+except ValueError:
+    print("Enter a valid amount")
